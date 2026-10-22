@@ -1,26 +1,33 @@
-taktplan
+# taktplan
 
-A production scheduling tool that turns messy ERP exports into clean, validated and audited data before generating schedules.
+A production scheduling tool that turns messy ERP exports into clean, validated, and audited data before generating schedules.
 
-Current Progress
+## Current Progress
 
-Duration Parser — Implemented and tested in Rust.
+### Duration Parser
 
-Supports:
+Implemented and tested in Rust.
 
-* Numeric durations with configurable default units (90)
-* Explicit units: seconds (2700s), minutes (45 min) and hours (1.5h)
-* Decimal and comma notation (1.5h, 1,5 h)
-* Hours-and-minutes notation (1:30)
-* Input validation, overflow protection and descriptive errors
+**Supported formats:**
+- Numeric durations with configurable default units: `90`
+- Seconds: `2700s`
+- Minutes: `45 min`, `45m`
+- Hours: `1.5h`, `1.5 hrs`
+- Decimal and comma notation: `1.5h`, `1,5 h`
+- Hours and minutes: `1:30`
 
-Roadmap
+Includes input validation, overflow protection, and descriptive errors.
 
-* Duration parser
-* Work-center ingestion with data audit reports
-* Routings and production orders
-* Finite-capacity scheduler
+## Roadmap
+- [x] Duration parser
+- [ ] Work-center ingest (Odoo export) with data-audit report
+- [ ] Routings, orders, shift calendars + cross-file checks
+- [ ] Finite-capacity scheduler with KPIs
+- [ ] Minimal-change replanning
+- [ ] HTTP API, Docker, Kubernetes (Helm)
 
-Running Tests
+## Running Tests
 
+```bash
 cargo test
+```
